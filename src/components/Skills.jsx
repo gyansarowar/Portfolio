@@ -6,14 +6,19 @@ import ReactImg from "../assets/react.png";
 import FireBase from "../assets/firebase.png";
 import GitHub from "../assets/github.png";
 import Tailwind from "../assets/tailwind.png";
-import { SiMysql, SiRedux, SiTypescript } from "react-icons/si";
+import ReactRouter from "../assets/react-router.svg";
+import MySQL from "../assets/mysql.svg";
+import Java from "../assets/java.svg";
+import {SiRedux, SiTypescript } from "react-icons/si";
 const Skills = () => {
   return (
-    <div name="skills" className="bg-[#0a192f] text-gray-300 w-full min-h-screen h-fit">
+    <div name="skills" className="bg-[#0a192f] cursor-default text-gray-300 w-full lg:pl-[60px] md:h-screen min-h-screen pt-28">
       {/*CONTAINER */}
       <div className=" max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full ">
         <div>
-          <p className=" text-4xl font-bold text-gray-300 inline border-b-4 border-pink-600">Experiences</p>
+          <p className=" text-4xl font-bold text-gray-300 inline border-b-4 border-pink-600">
+            Skills
+          </p>
           <p className=" py-4">These are the technologies I've worked with.</p>
         </div>
         {/*SKILLS group container */}
@@ -28,7 +33,11 @@ const Skills = () => {
             <p className=" my-4">CSS</p>
           </div>
           <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img src={JavaScript} alt="JavaScript icon" className=" w-20 mx-auto " />
+            <img
+              src={JavaScript}
+              alt="JavaScript icon"
+              className=" w-20 mx-auto "
+            />
             <p className=" my-4">JavaScript</p>
           </div>
           <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
@@ -37,11 +46,15 @@ const Skills = () => {
           </div>
           <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
             {/* <img src={Node} alt="Node icon" className=" w-20 mx-auto " /> */}
-            <SiRedux size={80} name="Redux icon" className=" w-20 mx-auto"/>
+            <SiRedux size={80} name="Redux icon" className=" w-20 mx-auto" />
             <p className=" my-4">Redux</p>
           </div>
           <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img src={FireBase} alt="FireBase icon" className=" w-20 mx-auto " />
+            <img
+              src={FireBase}
+              alt="FireBase icon"
+              className=" w-20 mx-auto "
+            />
             <p className=" my-4">Firebase</p>
           </div>
           <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
@@ -49,18 +62,48 @@ const Skills = () => {
             <p className=" my-4">GitHub</p>
           </div>
           <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img src={Tailwind} alt="Tailwind icon" className=" w-20 mx-auto " />
+            <img
+              src={Tailwind}
+              alt="Tailwind icon"
+              className=" w-20 mx-auto "
+            />
             <p className=" my-4">Tailwind CSS</p>
           </div>
           <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            {/* <img src={Tailwind} alt="Tailwind icon" className=" w-20 mx-auto " /> */}
-            <SiMysql size={80} name="SQL logo" className=" mx-auto text-blue-500"/>
+            <img src={MySQL} alt="mysql icon" className=" w-24 pt-7 mx-auto " />
+            {/* <SiMysql
+              size={80}
+              name="SQL logo"
+              className=" mx-auto text-blue-500"
+            /> */}
             <p className=" my-4">MySQL</p>
           </div>
           <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
             {/* <img src={Tailwind} alt="Tailwind icon" className=" w-20 mx-auto " /> */}
-            <SiTypescript size={80} name="TypeScript logo" className=" mx-auto text-blue-500 bg-white rounded-md"/>
+            <SiTypescript
+              size={80}
+              name="TypeScript logo"
+              className=" mx-auto text-blue-500 bg-white rounded-md"
+            />
             <p className=" my-4">TypeScript</p>
+          </div>
+          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+            <img
+              src={ReactRouter}
+              alt="React Router icon"
+              className=" pt-5 w-30 mx-auto "
+            />
+
+            <p className=" my-4">React Router</p>
+          </div>
+          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+            <img
+              src={Java}
+              alt="Java icon"
+              className="w-14 mx-auto "
+            />
+
+            <p className=" my-5">Java SE</p>
           </div>
         </div>
       </div>

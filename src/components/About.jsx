@@ -2,7 +2,10 @@ import React from "react";
 
 const About = () => {
   return (
-    <div name="about" className=" w-full h-screen bg-[#0a192f] text-gray-300 ">
+    <div
+      name="about"
+      className=" cursor-default w-full h-screen bg-[#0a192f] lg:text-lg text-gray-300 "
+    >
       <div className=" flex flex-col justify-center items-center w-full h-full">
         <div className=" max-w-[1000px] w-full grid grid-cols-2 gap-8 ">
           <div className=" sm:text-right pb-8 pl-4">
@@ -15,13 +18,16 @@ const About = () => {
         </div>
         <div className=" max-w-[1000px]  w-full grid sm:grid-cols-2 gap-8 px-4">
           <div className=" sm:text-right text-4xl font-bold">
-            <p>Hi, I'm Gyan, nice to meet you. Please take a look around.</p>
+            <p>Hello Again, nice to meet you. Please take a look around.</p>
           </div>
           <div>
-            <p>
+            <p className=" md:text-lg">
               I specialize in creating web applications using React and related
               technologies.I have a sound understanding and working knowledge of
-              best industrial practices.Feel free to contact me.
+              best industrial practices.<br/>I am eager to be part of a team wherein
+              I can apply my technical knowledge to make meaningful
+              contributions while gaining exposure to best industrial practices.<br/>
+              Please feel free to contact me.
             </p>
           </div>
         </div>
