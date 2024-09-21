@@ -4,7 +4,6 @@ import { FaBars, FaGithub, FaLinkedin, FaTimes } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { Link } from "react-scroll";
-import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
 
@@ -49,7 +48,7 @@ const Navbar = () => {
 
       {/*Hamburger */}
       <div onClick={handleClick} className=" md:hidden z-10">
-        {!nav ? <FaBars /> : <FaTimes />}
+        {!nav ? <FaBars size={20} /> : <FaTimes size={20} />}
       </div>
 
       {/*Mobile Menu */}
@@ -57,14 +56,24 @@ const Navbar = () => {
         className={
           !nav
             ? "hidden"
-            : "absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center"
+            : "absolute top-0 bottom-[60%] pt-6 left-[calc(100%-150px)] w-[150px] h-fit bg-[#0a192f] backdrop-blur-md bg-opacity-50 flex flex-col justify-start items-start"
         }
       >
-        <li className=" py-6 text-4xl">Home</li>
-        <li className=" py-6 text-4xl">About</li>
-        <li className=" py-6 text-4xl">Skills</li>
-        <li className=" py-6 text-4xl">Projects</li>
-        {/* <li className=" py-6 text-4xl">Contact</li> */}
+        <Link to="home" onClick={handleClick} smooth={true} duration={500}>
+          <li className=" pt-4 text-3xl">Home</li>
+        </Link>
+        <Link to="about" onClick={handleClick} smooth={true} duration={500}>
+          <li className=" pt-4 text-3xl">About</li>
+        </Link>
+        <Link to="skills" onClick={handleClick} smooth={true} duration={500}>
+          <li className=" pt-4 text-3xl">Skills</li>
+        </Link>
+        <Link to="projects" onClick={handleClick} smooth={true} duration={500}>
+          <li className=" pt-4 text-3xl">Projects</li>
+        </Link>
+        <Link to="contact" onClick={handleClick} smooth={true} duration={500}>
+          <li className=" pt-4 pb-1 text-3xl">Contact</li>
+        </Link>
       </ul>
 
       {/*Social Icons */}
