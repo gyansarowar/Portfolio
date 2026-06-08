@@ -1,80 +1,396 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Logo from "../assets/gs2.png";
 import { FaBars, FaGithub, FaLinkedin, FaTimes } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { Link } from "react-scroll";
+
+const navItems = ["home", "about", "skills", "projects", "contact"];
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
 
-  const handleClick = () => setNav(!nav);
+  const toggleNav = () => setNav(!nav);
 
   return (
-    <div className=" cursor-default fixed z-10 w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300  ">
-      <div className=" hover:cursor-pointer hover:opacity-70">
-        <Link to="home" smooth={true} duration={500}>
-          <img src={Logo} className="w-[70px]" />
-        </Link>
-      </div>
-      {/*Menu */}
+    <>
+      {/* NAVBAR */}
+      <nav
+        className="
+          fixed
+          top-0
+          left-0
+          z-50
 
-      <ul className=" hidden md:flex text-xl">
-        <li className=" hover:underline hover:text-pink-600 duration-500">
-          <Link to="home" smooth={true} duration={500}>
-            Home
-          </Link>
-        </li>
-        <li className=" hover:underline hover:text-pink-600 duration-500">
-          <Link to="about" smooth={true} duration={500}>
-            About
-          </Link>
-        </li>
-        <li className=" hover:underline hover:text-pink-600 duration-500">
-          <Link to="skills" smooth={true} duration={500}>
-            Skills
-          </Link>
-        </li>
-        <li className=" hover:underline hover:text-pink-600 duration-500">
-          <Link to="projects" smooth={true} duration={500}>
-            Projects
-          </Link>
-        </li>
-        <li className=" hover:underline hover:text-pink-600 duration-500">
-          <Link to="contact" smooth={true} duration={500}>
-            Contact
-          </Link>
-        </li>
-      </ul>
+          w-full
+          h-[80px]
 
-      {/*Hamburger */}
-      <div onClick={handleClick} className=" md:hidden z-10">
-        {!nav ? <FaBars size={20} /> : <FaTimes size={20} />}
-      </div>
+          bg-[#0a192f]
 
-      {/*Mobile Menu */}
-      <ul
-        className={
-          !nav
-            ? "hidden"
-            : "absolute top-0 bottom-[60%] pt-6 left-[calc(100%-150px)] w-[150px] h-fit bg-[#0a192f] backdrop-blur-md bg-opacity-50 flex flex-col justify-start items-start"
-        }
+          border-b
+          border-white/[0.05]
+
+          flex
+          items-center
+          justify-between
+
+          px-6
+          lg:px-12
+        "
       >
-        <Link to="home" onClick={handleClick} smooth={true} duration={500}>
-          <li className=" pt-4 text-3xl">Home</li>
+        {/* LOGO */}
+        <Link to="home" smooth duration={500} className="cursor-pointer">
+          <img
+            src={Logo}
+            alt="Logo"
+            className="
+              w-[72px] pb-4
+
+              transition-all
+              duration-500
+
+              hover:scale-105
+              hover:rotate-2
+            "
+          />
         </Link>
-        <Link to="about" onClick={handleClick} smooth={true} duration={500}>
-          <li className=" pt-4 text-3xl">About</li>
-        </Link>
-        <Link to="skills" onClick={handleClick} smooth={true} duration={500}>
-          <li className=" pt-4 text-3xl">Skills</li>
-        </Link>
-        <Link to="projects" onClick={handleClick} smooth={true} duration={500}>
-          <li className=" pt-4 text-3xl">Projects</li>
-        </Link>
-        <Link to="contact" onClick={handleClick} smooth={true} duration={500}>
-          <li className=" pt-4 pb-1 text-3xl">Contact</li>
-        </Link>
-      </ul>
+
+        {/* DESKTOP NAV */}
+        <ul
+          className="
+            hidden
+            md:flex
+
+            items-center
+            gap-10
+          "
+        >
+          {navItems.map((item) => (
+            <Link
+              key={item}
+              to={item}
+              smooth
+              duration={500}
+              className="
+                  relative
+
+                  uppercase
+                  tracking-[0.2em]
+
+                  text-sm
+
+                  text-slate-400
+
+                  transition-all
+                  duration-300
+
+                  hover:text-white
+                "
+            >
+              <li
+                key={item}
+                className="
+                group
+                relative
+                cursor-pointer
+              "
+              >
+                {item}
+
+                <span
+                  className="
+                    absolute
+
+                    -bottom-2
+                    left-0
+
+                    h-[1px]
+                    w-0
+
+                    bg-gradient-to-r
+                    from-cyan-400
+                    to-purple-500
+
+                    transition-all
+                    duration-300
+
+                    group-hover:w-full
+                  "
+                />
+              </li>
+            </Link>
+          ))}
+        </ul>
+
+        {/* MOBILE BUTTON */}
+        <button
+          onClick={toggleNav}
+          className="
+            md:hidden
+
+            h-12
+            w-12
+
+            rounded-full
+
+            border
+            border-white/10
+
+            flex
+            items-center
+            justify-center
+
+            text-white
+
+            transition-all
+            duration-300
+
+            hover:border-cyan-400/50
+          "
+        >
+          {nav ? <FaTimes size={22} /> : <FaBars size={22} />}
+        </button>
+      </nav>
+
+      {/* MOBILE FULLSCREEN MENU */}
+      <div
+        className={`
+          fixed
+          inset-0
+          z-40
+
+          bg-[#0a192f]
+
+          flex
+          flex-col
+          justify-center
+          items-center
+
+          transition-all
+          duration-500
+
+          ${
+            nav
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
+          }
+        `}
+      >
+        {/* TOP LINE */}
+        <div
+          className="
+            absolute
+            top-24
+            left-1/2
+
+            -translate-x-1/2
+
+            h-px
+            w-48
+
+            bg-gradient-to-r
+            from-transparent
+            via-cyan-400
+            to-transparent
+          "
+        />
+
+        {/* BOTTOM LINE */}
+        <div
+          className="
+            absolute
+            bottom-24
+            left-1/2
+
+            -translate-x-1/2
+
+            h-px
+            w-48
+
+            bg-gradient-to-r
+            from-transparent
+            via-purple-400
+            to-transparent
+          "
+        />
+
+        {/* NAV ITEMS */}
+        <div
+          className="
+            flex
+            flex-col
+            items-center
+            gap-8
+          "
+        >
+          {navItems.map((item) => (
+            <Link
+              key={item}
+              to={item}
+              smooth
+              duration={500}
+              onClick={toggleNav}
+              className="
+                uppercase
+
+                text-4xl
+                sm:text-5xl
+
+                font-light
+
+                tracking-[0.15em]
+
+                text-slate-500
+
+                cursor-pointer
+
+                transition-all
+                duration-500
+
+                hover:text-white
+                hover:tracking-[0.25em]
+              "
+            >
+              {item}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* SOCIAL DOCK */}
+      {/* <div
+        className="
+          hidden
+          lg:flex
+
+          fixed
+          left-8
+          bottom-8
+
+          z-40
+
+          items-center
+          gap-4
+        "
+      >
+        <a
+          href="https://www.linkedin.com/in/gyan2307/"
+          target="_blank"
+          rel="noreferrer"
+          className="
+            h-12
+            w-12
+
+            rounded-full
+
+            border
+            border-white/10
+
+            flex
+            items-center
+            justify-center
+
+            text-slate-400
+
+            transition-all
+            duration-300
+
+            hover:text-white
+            hover:border-cyan-400
+            hover:-translate-y-1
+          "
+        >
+          <FaLinkedin size={18} />
+        </a>
+
+        <a
+          href="https://github.com/gyansarowar"
+          target="_blank"
+          rel="noreferrer"
+          className="
+            h-12
+            w-12
+
+            rounded-full
+
+            border
+            border-white/10
+
+            flex
+            items-center
+            justify-center
+
+            text-slate-400
+
+            transition-all
+            duration-300
+
+            hover:text-white
+            hover:border-cyan-400
+            hover:-translate-y-1
+          "
+        >
+          <FaGithub size={18} />
+        </a>
+
+        <a
+          href="mailto:gyansarowar123@gmail.com"
+          className="
+            h-12
+            w-12
+
+            rounded-full
+
+            border
+            border-white/10
+
+            flex
+            items-center
+            justify-center
+
+            text-slate-400
+
+            transition-all
+            duration-300
+
+            hover:text-white
+            hover:border-cyan-400
+            hover:-translate-y-1
+          "
+        >
+          <HiOutlineMail size={18} />
+        </a>
+
+        <a
+          href="https://drive.google.com/file/d/1TTK-Z4wtaKxtf19G6wKE_I7gasTpKKxt/view?usp=sharing"
+          target="_blank"
+          rel="noreferrer"
+          className="
+            h-12
+            w-12
+
+            rounded-full
+
+            border
+            border-white/10
+
+            flex
+            items-center
+            justify-center
+
+            text-slate-400
+
+            transition-all
+            duration-300
+
+            hover:text-white
+            hover:border-cyan-400
+            hover:-translate-y-1
+          "
+        >
+          <BsFillPersonLinesFill size={18} />
+        </a>
+      </div> */}
 
       {/*Social Icons */}
       <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
@@ -121,7 +437,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 

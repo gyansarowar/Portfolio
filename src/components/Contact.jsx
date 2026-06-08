@@ -1,4 +1,4 @@
-import React from "react";
+
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedin, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
@@ -9,8 +9,8 @@ const Contact = () => {
       name="contact"
       className="bg-[#0a192f] text-gray-300 w-full h-fit flex flex-col justify-center items-center p-4"
     >
-      <h1 className=" text-4xl border-b-4 border-pink-600">Contact Me</h1>
-      <p className=" py-4">
+      <h1 className=" text-6xl border-b-4 border-pink-600">Contact Me</h1>
+      <p className=" py-4 text-2xl">
         View my LinkedIn, GitHub, Resume or shoot me an email -{" "}
         <a
           href="mailto:gyansarowar123@gmail.com"

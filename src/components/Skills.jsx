@@ -9,30 +9,33 @@ import Tailwind from "../assets/tailwind.png";
 import ReactRouter from "../assets/react-router.svg";
 import MySQL from "../assets/mysql.svg";
 import Java from "../assets/java.svg";
-import {SiRedux, SiTypescript } from "react-icons/si";
+import { SiRedux, SiTypescript } from "react-icons/si";
 const Skills = () => {
   return (
-    <div name="skills" className="bg-[#0a192f] cursor-default text-gray-300 w-full lg:pl-[60px] md:h-screen min-h-screen pt-28">
+    <div
+      name="skills"
+      className="bg-[#0a192f] cursor-default text-gray-300 w-full lg:pl-[60px] md:h-screen min-h-screen pt-28"
+    >
       {/*CONTAINER */}
       <div className=" max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full ">
         <div>
-          <p className=" text-4xl font-bold text-gray-300 inline border-b-4 border-pink-600">
+          <p className=" text-6xl font-bold text-gray-300 inline border-b-4 border-pink-600">
             Skills
           </p>
-          <p className=" py-4">These are the technologies I've worked with.</p>
+          <p className=" py-4">These are the technologies I&apos;ve worked with.</p>
         </div>
         {/*SKILLS group container */}
         <div className=" w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8">
           {/*Individual Skill Container */}
-          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+          <div className="pt-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 hover:-translate-y-3 transition-all duration-500">
             <img src={HTML} alt="HTML icon" className=" w-20 mx-auto " />
             <p className=" my-4">HTML</p>
           </div>
-          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+          <div className="pt-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 hover:-translate-y-3 transition-all duration-500">
             <img src={CSS} alt="CSS icon" className=" w-20 mx-auto " />
             <p className=" my-4">CSS</p>
           </div>
-          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+          <div className="pt-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 hover:-translate-y-3 transition-all duration-500">
             <img
               src={JavaScript}
               alt="JavaScript icon"
@@ -40,16 +43,16 @@ const Skills = () => {
             />
             <p className=" my-4">JavaScript</p>
           </div>
-          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+          <div className="pt-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 hover:-translate-y-3 transition-all duration-500">
             <img src={ReactImg} alt="React icon" className=" w-20 mx-auto " />
             <p className=" my-4">React</p>
           </div>
-          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+          <div className="pt-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 hover:-translate-y-3 transition-all duration-500">
             {/* <img src={Node} alt="Node icon" className=" w-20 mx-auto " /> */}
             <SiRedux size={80} name="Redux icon" className=" w-20 mx-auto" />
             <p className=" my-4">Redux</p>
           </div>
-          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+          <div className="pt-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 hover:-translate-y-3 transition-all duration-500">
             <img
               src={FireBase}
               alt="FireBase icon"
@@ -57,11 +60,11 @@ const Skills = () => {
             />
             <p className=" my-4">Firebase</p>
           </div>
-          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+          <div className="pt-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 hover:-translate-y-3 transition-all duration-500">
             <img src={GitHub} alt="GitHub icon" className=" w-20 mx-auto " />
             <p className=" my-4">GitHub</p>
           </div>
-          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+          <div className="pt-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 hover:-translate-y-3 transition-all duration-500">
             <img
               src={Tailwind}
               alt="Tailwind icon"
@@ -69,7 +72,7 @@ const Skills = () => {
             />
             <p className=" my-4">Tailwind CSS</p>
           </div>
-          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+          <div className="pt-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 hover:-translate-y-3 transition-all duration-500">
             <img src={MySQL} alt="mysql icon" className=" w-24 pt-7 mx-auto " />
             {/* <SiMysql
               size={80}
@@ -78,7 +81,7 @@ const Skills = () => {
             /> */}
             <p className=" my-4">MySQL</p>
           </div>
-          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+          <div className="pt-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 hover:-translate-y-3 transition-all duration-500">
             {/* <img src={Tailwind} alt="Tailwind icon" className=" w-20 mx-auto " /> */}
             <SiTypescript
               size={80}
@@ -87,7 +90,7 @@ const Skills = () => {
             />
             <p className=" my-4">TypeScript</p>
           </div>
-          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+          <div className="pt-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 hover:-translate-y-3 transition-all duration-500">
             <img
               src={ReactRouter}
               alt="React Router icon"
@@ -96,12 +99,8 @@ const Skills = () => {
 
             <p className=" my-4">React Router</p>
           </div>
-          <div className=" shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img
-              src={Java}
-              alt="Java icon"
-              className="w-14 mx-auto "
-            />
+          <div className="pt-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 hover:-translate-y-3 transition-all duration-500">
+            <img src={Java} alt="Java icon" className="w-14 mx-auto " />
 
             <p className=" my-5">Java SE</p>
           </div>

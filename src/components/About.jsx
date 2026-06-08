@@ -1,5 +1,5 @@
-import React from "react";
 
+import { Link } from "react-scroll";
 const About = () => {
   return (
     <div
@@ -10,24 +10,54 @@ const About = () => {
         <div className=" max-w-[1000px] w-full grid grid-cols-2 gap-8 ">
           <div className=" sm:text-right pb-8 pl-4">
             {" "}
-            <p className=" text-4xl font-bold inline border-b-4 border-pink-600 ">
+            <p className=" text-4xl md:text-6xl font-bold inline border-b-4 border-pink-600 ">
               About
             </p>{" "}
           </div>
-          <div></div>
         </div>
-        <div className=" max-w-[1000px]  w-full grid sm:grid-cols-2 gap-8 px-4">
-          <div className=" sm:text-right text-4xl font-bold">
-            <p>Hello Again, nice to meet you. Please take a look around.</p>
+        <div className="max-w-[1100px] w-full grid md:grid-cols-2 gap-12 px-6 text-slate-100">
+          <div className=" md:text-right text-4xl font-bold">
+            <p className="text-3xl md:text-5xl font-bold leading-tight text-slate-100 textl">
+              <div className=" pb-2">
+                <p className=" text-left pl-[13px]">Curious by nature,</p>
+                Developer by choice.✌️
+              </div>
+              I enjoy building things, solving problems, and learning something
+              new along the way.
+            </p>
           </div>
           <div>
-            <p className=" md:text-lg">
-              I specialize in creating web applications using React and related
-              technologies.I have a sound understanding and working knowledge of
-              best industrial practices.<br/>I am eager to be part of a team wherein
-              I can apply my technical knowledge to make meaningful
-              contributions while gaining exposure to best industrial practices.<br/>
-              Please feel free to contact me.
+            <p className=" md:text-2xl space-y-4">
+              <p className="text-slate-200  ">
+                I enjoy creating meaningful digital experiences and continuously
+                improving the way I build them.
+              </p>
+              <p className=" text-slate-200 space-y-4">
+                <p>
+                  What keeps me excited about software development is the
+                  endless opportunity to learn, improve, and create something
+                  meaningful.
+                </p>
+                <p>
+                  Outside of coding, I&apos;m usually exploring new ideas,
+                  learning something interesting, or telling myself &quot;just
+                  one more tweak&quot; before spending another hour on a
+                  project🌚.
+                </p>
+                <p>
+                  Feel free to reach out if you&apos;d like to{" "}
+                  <span>
+                    <Link
+                      to="contact"
+                      smooth
+                      duration={500}
+                      className="cursor-pointer text-pink-600"
+                    >
+                      connect.
+                    </Link>
+                  </span>{" "}
+                </p>
+              </p>
             </p>
           </div>
         </div>
