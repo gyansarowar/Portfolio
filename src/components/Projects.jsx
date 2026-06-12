@@ -40,7 +40,7 @@ const Projects = () => {
       <div className="max-w-[1100px] mx-auto p-6 flex flex-col justify-center w-full h-full">
         {/* Heading */}
         <div className="pb-12">
-          <p className="text-4xl font-bold inline border-b-4 border-pink-600">
+          <p className="text-6xl font-bold inline border-b-4 border-pink-600">
             Projects
           </p>
 
